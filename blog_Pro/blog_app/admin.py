@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import PostBlog
 
 class PostBlogAdmin(admin.ModelAdmin):
-    fields = ['author', 'title', 'content'] 
+    fields = ['author', 'title', 'content', 'image'] 
     list_display = ['title', 'author', 'created', 'updated']
     list_display_links = ['created', 'updated']
     list_filter = ['author']

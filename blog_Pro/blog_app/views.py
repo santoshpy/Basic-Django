@@ -4,7 +4,7 @@ from .models import PostBlog
 
 # Create your views here.
 def home_view(request):
-	instance = PostBlog.objects.all()
+	instance = PostBlog.objects.all()[:2]
 	context = {
 	'blog_list': instance
 	}
