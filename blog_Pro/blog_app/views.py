@@ -4,6 +4,10 @@ from .models import PostBlog
 
 # Create your views here.
 def home_view(request):
-	context = {}
+	instance = PostBlog.objects.all()
+	context = {
+	'blog_list': instance
+	}
 	template = 'home.html'
 	return render(request, template, context)
+
