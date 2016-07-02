@@ -11,7 +11,7 @@ class PostBlogAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     list_editable = ['title']
     ordering = ['author']
-    list_select_related = True
+    list_select_related = True	
 
     #actions_on_top = False 
     #actions_on_bottom = False
