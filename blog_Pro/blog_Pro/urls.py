@@ -15,13 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from blog_app.views import home_view
+from blog_app.views import (home_view,
+							about_view,
+							contact_view, 
+							blog_list_view, 
+							detail_view,)
 
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-	url(r'^$', home_view),
+	url(r'^$', home_view, name='home'),
+	url(r'^about/$', about_view, name='about'),
+	url(r'^post/(?P<id>\d+)$', detail_view, name='detail'),
+	url(r'^contact/$', contact_view, name='contact'),
+	url(r'^blogs/$', blog_list_view, name='blogs'),
     url(r'^admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

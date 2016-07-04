@@ -6,9 +6,10 @@ from django.db import models
 
 class PostBlog(models.Model):
     title = models.CharField(help_text='write beautiful title of your blog', max_length=140)
-    image = models.ImageField(null=True, blank=True, upload_to='blog_images',)
+    image = models.ImageField(null=True, blank=True, upload_to='Blog Image',)
     content = models.TextField(help_text='Write something you wish to write!')
     author = models.CharField(help_text='full Name', max_length=60)
+    publish = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
