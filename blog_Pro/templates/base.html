@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block title %}
+    {% endblock title %}
+
+    {% include 'css.html' %}
+</head>
+
+
+<body>
+
+   {% include 'navbar.html' %}
+    <!-- Set your background image for this header on the line below. -->
+    {% block header %}
+    
+    {% endblock header %}
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {% block container %}
+
+                {% endblock container %}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+   {% include 'javascripts.html' %}
+
+</body>
+
+</html>
